@@ -1,3 +1,5 @@
+/*
+ 
 // DateExtensions.swift - Copyright 2024 SwifterSwift
 
 #if canImport(Foundation)
@@ -1034,3 +1036,5 @@ public extension Date {
 }
 
 #endif
+
+*/
