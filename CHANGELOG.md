@@ -3,7 +3,45 @@
 The changelog for **SwifterSwift**. Also see the [releases](https://github.com/SwifterSwift/SwifterSwift/releases) on GitHub.
 
 ## Upcoming Release
+### Breaking Change
 ### Added
+- **WASM**
+  - Added WASM support. [#1260](https://github.com/SwifterSwift/SwifterSwift/pull/1260) by [guykogus](https://github.com/guykogus)
+- **Calendar**
+  - Added `numberOfDaysInYear(for:)` method to get the total number of days in a date's year. [#1253](https://github.com/SwifterSwift/SwifterSwift/pull/1253) by [William-Laverty](https://github.com/William-Laverty)
+- **UIView**
+  - Added `removeAllSubviews()` method to remove all subviews. [#1265](https://github.com/SwifterSwift/SwifterSwift/pull/1265) by [weihas](https://github.com/weihas)
+- **Xcode**
+  - Added support for Xcode 26. [#1240](https://github.com/SwifterSwift/SwifterSwift/pull/1240) by [guykogus](https://github.com/guykogus)
+- **UIKit**
+  - Added `UICollectionView.register(nibWithCellClass:bundle:)` to register nib-based cells from an explicit bundle. [#1187](https://github.com/SwifterSwift/SwifterSwift/pull/1187) by [guykogus](https://github.com/guykogus)
+  - Added `UITableView.register(nibWithCellClass:bundle:)` to register nib-based cells from an explicit bundle. [#1187](https://github.com/SwifterSwift/SwifterSwift/pull/1187) by [guykogus](https://github.com/guykogus)
+### Changed
+  - **String**
+    - `isNumeric` now recognizes US-style (`123,456.78`) and EU-style (`123.456,78`) thousands grouping in addition to plain `Double` strings. [#1187](https://github.com/SwifterSwift/SwifterSwift/pull/1187) by [guykogus](https://github.com/guykogus)
+  - `Date.string(withFormat:)` now support locale and timeZone parameter. [#1250](https://github.com/SwifterSwift/SwifterSwift/pull/1250) by [weihas](https://github.com/weihas)
+### Fixed
+- **UIFont**
+  - Avoid crash for fonts without bold/italic traits, fallback to self like SwiftUI. [#1246](https://github.com/SwifterSwift/SwifterSwift/pull/1246) by [weihas](https://github.com/weihas)
+- **Sequence**
+  - Fixed documentation for `any`.
+### Deprecated
+- **UIView**
+  - `removeSubviews()` has been renamed to `removeAllSubviews()`. [#1265](https://github.com/SwifterSwift/SwifterSwift/pull/1265) by [weihas](https://github.com/weihas)
+### Removed
+
+## [v8.0.0](https://github.com/SwifterSwift/SwifterSwift/releases/tag/8.0.0)
+### Breaking Change
+- **String**
+  - Replaced `~=` operator overload with `=~` to fix breaking `switch` statements and align with other languages. [#1239](https://github.com/SwifterSwift/SwifterSwift/pull/1239) by [guykogus](https://github.com/guykogus)
+
+### Added
+- **UIView**
+  - Added `addBottomSeparator(color:height:spacing:)` method to easily insert a bottom line to a view. 🚀 [#1234](https://github.com/SwifterSwift/SwifterSwift/pull/1234) by [sangjin](https://github.com/SsangG77)
+- **Android**
+  - Added Android platform support. [#1230](https://github.com/SwifterSwift/SwifterSwift/pull/1230) by [Marc Prud'hommeaux](https://github.com/marcprux)
+- **CocoaPods**
+  - Added subspecs to not include `@IBInspectable` extensions, which can cause Xcode Interface Builder to run slowly. [#1323](https://github.com/SwifterSwift/SwifterSwift/pull/1323) by [guykogus](https://github.com/guykogus)
 
 ### Changed
 - **String**
@@ -12,7 +50,9 @@ The changelog for **SwifterSwift**. Also see the [releases](https://github.com/S
 ### Fixed
 - **Examples** : Added "import Foundation" to Foundation Extension Playground page for Date() extension to work properly on Mac
 - **Array**
-  - `init(unsafeUninitializedCapacity:initializedWith:)` initializedCount should be eaqule to the number of successfully initialized elements, Ensure that the Array properly release allocated memory in case of an error.[#1222](https://github.com/SwifterSwift/SwifterSwift/pull/1222) by [fallwd](https://github.com/fallwd)
+  - `init(unsafeUninitializedCapacity:initializedWith:)` `initializedCount` should be equal to the number of successfully initialized elements, ensuring that the `Array` properly releases allocated memory in case of an error.[#1222](https://github.com/SwifterSwift/SwifterSwift/pull/1222) by [fallwd](https://github.com/fallwd)
+- **FloatingPoint**
+  - Calculate `ceil` and `floor` using `rounded(_:)`, and `√` using `squareRoot()`, instead of using `Foundation` functions. [#1231](https://github.com/SwifterSwift/SwifterSwift/pull/1231) by [guykogus](https://github.com/guykogus)
 
 ### Deprecated
 
